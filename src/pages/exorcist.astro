@@ -1,0 +1,381 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="THE EXORCIST">
+  <main>
+    <div class="logo">
+      <a href="/"> [ <div class="circle"></div> back]</a>
+    </div>
+    <div class="header">
+      <div class="letters">
+        <div>t</div>
+        <div>h</div>
+        <div>e</div>
+        <div></div>
+      </div>
+      <div class="letters">
+        <div>e</div>
+        <div>x</div>
+        <div>o</div>
+        <div>r</div>
+        <div>c</div>
+        <div>i</div>
+        <div>s</div>
+        <div>t</div>
+      </div>
+    </div>
+
+    <div class="website-content">
+      <div class="img-holder">
+        <img src="src/assets/planos/exorcista.webp" alt="" />
+      </div>
+
+      <div class="content-holder">
+        <div class="row">
+          <h1>The Exorcist 1973 - William Friedkin</h1>
+        </div>
+
+        <div class="row">
+          <div class="img">
+            <img src="src/assets/exorcist/poster.jpg" alt="" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="img">
+            <img src="src/assets/exorcist/3.jpg" alt="" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="img">
+            <img src="src/assets/exorcist/up.jpg" alt="" />
+          </div>
+        </div>
+
+        <div class="row">
+          <p>
+            Original title: The Exorcist <br />
+            Year: 1973 <br />
+
+            Running time: 121 min <br />
+            Country: United States <br />
+            Director: William Friedkin
+            <br />Screenwriter: William Peter Blatty
+            <br />Novel: William Peter Blatty
+            <br />Music: Jack Nitzsche
+            <br />Cinematography: Owen Roizman
+            <br /> Genre: Horror | Exorcism / Evil Possession. Religion. Supernatural.
+            Cult Movie
+          </p>
+        </div>
+
+        <div class="row">
+          <a href="https://www.youtube.com/watch?v=BU2eYAO31Cc" target="_blank">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-arrow-up-right"
+              width="20"
+              height="15"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                d="M17 7l-10 10"></path><path d="M8 7l9 0l0 9"></path></svg
+            >Trailer</a
+          >
+        </div>
+        <div class="row">
+          <p>
+            The story chronicles a single mother's struggle to save her daughter
+            from a mysterious ailment, later revealed to be demonic possession.
+            She enlists the help of two Roman Catholic priests, who attempt to
+            perform an exorcism.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <style>
+    @import url("https://fonts.cdnfonts.com/css/pp-neue-montreal");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      overscroll-behavior: none;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    html,
+    body {
+      font-family: "PP Neue Montreal", sans-serif;
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 80px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.5;
+      width: 50%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .logo {
+      position: fixed;
+      top: 0;
+      right: 0;
+      margin: 2em;
+      z-index: 1000;
+    }
+
+    .logo a {
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 400;
+      display: flex;
+      color: #000;
+      gap: 2px;
+      font-size: 18px;
+      animation: neon 1.5s ease-in-out infinite alternate;
+    }
+
+    .logo a:hover {
+      opacity: 0.6;
+    }
+
+    .logo .circle {
+      width: 13px;
+      height: 13px;
+      background: red;
+      border-radius: 100%;
+      margin-top: 4px;
+    }
+
+    @keyframes neon {
+      from {
+        text-shadow:
+          0 0 10px #fff,
+          0 0 20px #fff,
+          0 0 30px #fff,
+          0 0 40px #000,
+          0 0 70px #000,
+          0 0 80px #000,
+          0 0 100px #000,
+          0 0 150px #000;
+      }
+      to {
+        text-shadow:
+          0 0 5px #fff,
+          0 0 10px #fff,
+          0 0 15px #fff,
+          0 0 20px #000,
+          0 0 35px #000,
+          0 0 40px #000,
+          0 0 50px #000,
+          0 0 75px #000;
+      }
+    }
+
+    .header {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .letters {
+      flex: 1;
+      display: flex;
+      text-transform: uppercase;
+    }
+
+    .letters > div {
+      flex: 1;
+      font-size: 14vw;
+      font-weight: 400;
+      color: #000;
+      text-align: center;
+    }
+
+    .website-content {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    .img-holder {
+      position: relative;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      background: #fff;
+      clip-path: polygon(37.5% 20%, 62.5% 20%, 62.5% 80%, 37.5% 80%);
+      transform: rotate(30deg);
+    }
+
+    .img-holder img {
+      position: relative;
+      transform: scale(2);
+    }
+
+    .content-holder {
+      position: relative;
+      top: -5px;
+      width: 100%;
+      background: #000;
+      color: #fff;
+      padding: 1em;
+    }
+
+    .row {
+      margin: 2em 1em;
+    }
+
+    .img {
+      width: 30%;
+      height: 30%;
+    }
+
+    .row:nth-child(2) .img {
+      position: relative;
+      left: 50%;
+    }
+
+    .row:nth-child(3) .img {
+      position: relative;
+      left: 15%;
+    }
+
+    .row:nth-child(4) .img {
+      position: relative;
+      left: 60%;
+    }
+
+    .row a {
+      text-decoration: none;
+      color: #fff;
+      cursor: pointer;
+      position: absolute;
+      left: 2.5%;
+      bottom: 25%;
+      z-index: 2;
+      font-size: 18px;
+    }
+
+    .row a:hover {
+      border-bottom: #fff 1px solid;
+      opacity: 0.7;
+    }
+  </style>
+
+  <script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const contentHolder = document.querySelector(".content-holder");
+      const contentHolderHeight = (contentHolder as HTMLElement).offsetHeight;
+      const imgHolderHeight = window.innerHeight;
+      const additionalScrollHeight = window.innerHeight;
+
+      const totalBodyHeight =
+        contentHolderHeight + imgHolderHeight + additionalScrollHeight;
+      document.body.style.height = `${totalBodyHeight}px`;
+    });
+
+    ScrollTrigger.create({
+      trigger: ".website-content",
+      start: "-0.1% top",
+      end: "bottom bottom",
+      onEnter: () => {
+        gsap.set(".website-content", { position: "absolute", top: "195%" });
+      },
+      onLeaveBack: () => {
+        gsap.set(".website-content", { position: "fixed", top: "0" });
+      },
+    });
+
+    gsap.to(".header .letters:first-child", {
+      x: () => -innerWidth * 3,
+      scale: 10,
+      ease: "power2.inOut",
+      scrollTrigger: {
+        start: "top top",
+        end: "+=200%",
+        scrub: 1,
+      },
+    });
+
+    gsap.to(".header .letters:last-child", {
+      x: () => innerWidth * 4,
+      scale: 10,
+      ease: "power2.inOut",
+      scrollTrigger: {
+        start: "top top",
+        end: `+=200%`,
+        scrub: 1,
+      },
+    });
+
+    gsap.to(".img-holder", {
+      rotation: 0,
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      ease: "power2.inOut",
+      scrollTrigger: {
+        start: "top top",
+        end: `+=200%`,
+        scrub: 1,
+      },
+    });
+
+    gsap.to(".img-holder img", {
+      scale: 1,
+      ease: "power2.inOut",
+      scrollTrigger: {
+        start: "top top",
+        end: `+=200%`,
+        scrub: 1,
+      },
+    });
+
+    gsap.to(".logo a", {
+      color: "#fff",
+      scrollTrigger: {
+        start: "top top",
+        end: `+=200%`,
+        scrub: 1,
+      },
+    });
+  </script>
+</Layout>

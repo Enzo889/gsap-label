@@ -1,0 +1,381 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Shooting Movies">
+  <div class="cursor">
+    <img src="src/assets/mira.png" alt="" />
+  </div>
+  <div class="container">
+    <div class="gallery">
+      <div class="block block-1"></div>
+      <div class="block block-2"></div>
+      <div class="block block-3"></div>
+      <div class="block block-4"></div>
+      <div class="block block-5"></div>
+      <div class="block block-6"></div>
+      <div class="block block-7"></div>
+      <div class="block block-8"></div>
+      <div class="block block-9"></div>
+      <div class="block block-10"></div>
+      <div class="block block-11"></div>
+      <div class="block block-12"></div>
+      <div class="block block-13"></div>
+      <div class="block block-14"></div>
+      <div class="block block-15"></div>
+      <div class="block block-16"></div>
+      <div class="block block-17"></div>
+      <div class="block block-18"></div>
+      <div class="block block-19"></div>
+      <div class="block block-20"></div>
+      <div class="block block-21"></div>
+      <div class="block block-22"></div>
+      <div class="block block-23"></div>
+    </div>
+
+    <div class="nav">
+      <a href="/">Back</a>
+      <div class="counter">
+        <p>Kill Counter:</p>
+        <p id="kill-counter">0</p>
+      </div>
+    </div>
+    <div class="title">
+      <h1>Locked and Loaded</h1>
+      <p>"Taking Aim at Movie Masterpieces"</p>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/syn-nova");
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    cursor: none;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    pointer-events: none;
+  }
+
+  .cursor img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .gallery {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    transform-style: preserve-3d;
+    perspective: 2000px;
+  }
+
+  .block {
+    position: absolute;
+    width: 100px;
+    height: 130px;
+    background: #c0c0c0;
+    transform-style: preserve-3d;
+    transform: translateZ(1750px);
+  }
+
+  .nav {
+    width: 100%;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: #d02129;
+    cursor: none;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-family: "SYN Nova", sans-serif;
+    font-weight: 900;
+  }
+
+  .nav a:hover {
+    border-bottom: 2px solid red;
+    color: red;
+  }
+
+  .counter {
+    color: #d02129;
+    display: flex;
+    gap: 5px;
+    font-size: 25px;
+    font-family: "SYN Nova", sans-serif;
+    font-weight: 900;
+  }
+
+  .title {
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    color: #d02129;
+    text-align: center;
+    font-family: "SYN Nova", sans-serif;
+    pointer-events: none;
+  }
+
+  .title h1 {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 80px;
+  }
+
+  .title p {
+    font-size: 40px;
+    color: #fff;
+  }
+
+  .block-1 {
+    top: 30%;
+    left: 65%;
+    background: url("src/assets/burning.jpg") no-repeat 50% 50%;
+    background-size: cover;
+  }
+
+  .block-2 {
+    top: 20%;
+    left: 25%;
+    background: url("src/assets/if.jpg") no-repeat 50% 50%;
+    background-size: cover;
+  }
+  .block-3 {
+    top: 50%;
+    left: 10%;
+    background: url("src/assets/express.jpg") no-repeat 50% 50%;
+    background-size: cover;
+  }
+
+  .block-4 {
+    top: 60%;
+    left: 40%;
+    background: url("src/assets/fallen.jpg") no-repeat 50% 50%;
+    background-size: cover;
+  }
+
+  .block-5 {
+    top: 30%;
+    left: 30%;
+    background: url("src/assets/heat.jpg") no-repeat 50% 50%;
+    background-size: cover;
+  }
+
+  .block-6 {
+    top: 60%;
+    left: 60%;
+    background: url("src/assets/ready-p.jpg") no-repeat 50% 50%;
+    background-size: cover;
+  }
+
+  .block-7 {
+    top: 20%;
+    left: 50%;
+    background: url("src/assets/irish.jpg") no-repeat 50% 50%;
+    background-size: cover;
+  }
+
+  .block-8 {
+    top: 60%;
+    left: 10%;
+    background: url("src/assets/land.jpg") no-repeat 50% 50%;
+    background-size: cover;
+  }
+
+  .block-9 {
+    top: 20%;
+    left: 40%;
+    background: url("src/assets/fvf.jpg") no-repeat 50% 50%;
+    background-size: cover;
+  }
+
+  .block-10 {
+    top: 40%;
+    left: 60%;
+    background: url("src/assets/once.jpg") no-repeat 50% 50%;
+    background-size: cover;
+  }
+
+  .block-11 {
+    top: 60%;
+    left: 25%;
+    background: url("src/assets/rear.jpg") no-repeat 50% 50%;
+    background-size: cover;
+  }
+
+  .block-12 {
+    top: 30%;
+    left: 60%;
+    background: url("src/assets/split.jpg") no-repeat 50% 50%;
+    background-size: cover;
+  }
+
+  .block-13 {
+    top: 60%;
+    left: 25%;
+    background: url("src/assets/wolf.jpg") no-repeat 50% 50%;
+    background-size: cover;
+  }
+
+  .block-14 {
+    top: 25%;
+    left: 25%;
+    background: url("src/assets/old-men.jpg") no-repeat 50% 50%;
+    background-size: cover;
+  }
+
+  .block-15 {
+    top: 50%;
+    left: 10%;
+    background: url("src/assets/paris.jpg") no-repeat 50% 50%;
+    background-size: cover;
+  }
+
+  .block-16 {
+    top: 60%;
+    left: 40%;
+    background: url("src/assets/logan.jpg") no-repeat 50% 50%;
+    background-size: cover;
+  }
+
+  .block-17 {
+    top: 30%;
+    left: 30%;
+    background: url("src/assets/blow-out.jpg") no-repeat 50% 50%;
+    background-size: cover;
+  }
+
+  .block-18 {
+    top: 60%;
+    left: 60%;
+    background: url("src/assets/Holdovers.jpg") no-repeat 50% 50%;
+    background-size: cover;
+  }
+
+  .block-19 {
+    top: 20%;
+    left: 50%;
+    background: url("src/assets/dark-glasses.jpg") no-repeat 50% 50%;
+    background-size: cover;
+  }
+
+  .block-20 {
+    top: 60%;
+    left: 10%;
+    background: url("src/assets/as-bestas.jpg") no-repeat 50% 50%;
+    background-size: cover;
+  }
+
+  .block-21 {
+    top: 20%;
+    left: 40%;
+    background: url("src/assets/cry-macho.jpg") no-repeat 50% 50%;
+    background-size: cover;
+  }
+
+  .block-22 {
+    top: 40%;
+    left: 60%;
+    background: url("src/assets/basic.jpg") no-repeat 50% 50%;
+    background-size: cover;
+  }
+  .block-23 {
+    top: 60%;
+    left: 25%;
+    background: url("src/assets/two-lovers.jpg") no-repeat 50% 50%;
+    background-size: cover;
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  const cursor = document.querySelector(".cursor");
+  document.body.addEventListener("mousemove", onMouseMove);
+
+  function onMouseMove(e: MouseEvent) {
+    gsap.to(cursor, 0.0125, {
+      x: e.pageX - 5,
+      y: e.pageY - 5,
+    });
+  }
+
+  let blocks = document.querySelectorAll(".block");
+  let duration = 0.25;
+  let stagger = duration;
+  let repeatDelay = 0.075 * (blocks.length - 1);
+  let killCounter = 0; // Variable para el contador de muertes
+
+  gsap.from(".block", 5, {
+    scale: 0,
+    top: "50%",
+    left: "50%",
+    transform: "translateZ(-200px)",
+    stagger: {
+      each: stagger,
+      repeat: -1,
+      repeatDelay: repeatDelay,
+    },
+  });
+
+  let previousGif = false as any;
+
+  blocks.forEach((block: any) => {
+    block.addEventListener("click", (event: MouseEvent) => {
+      const x = event.clientX;
+      const y = event.clientY;
+
+      if (previousGif) {
+        previousGif.remove();
+      }
+
+      const gif = document.createElement("img");
+      gif.src = "src/assets/gifs/explo.gif";
+      gif.style.position = "absolute";
+      gif.style.left = `${x - 10}px`;
+      gif.style.top = `${y - 10}px`;
+      gif.style.transform = "scale(1.5)";
+      gif.style.pointerEvents = "none";
+
+      document.body.appendChild(gif);
+
+      setTimeout(() => {
+        gif.src = " ";
+      }, 500);
+
+      previousGif = gif;
+
+      block.style.display = "none";
+      setTimeout(() => {
+        block.style.display = "block";
+      }, 5000);
+
+      // Incrementar el contador de muertes
+      killCounter++;
+      // Actualizar el contenido del contador
+      const counterElement = document.getElementById("kill-counter");
+      if (counterElement) {
+        counterElement.innerText = killCounter.toString();
+      }
+    });
+  });
+</script>

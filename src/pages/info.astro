@@ -1,0 +1,432 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BackTop from "../components/BackTop.astro";
+---
+
+<Layout title="INFO">
+  <main>
+    <div class="container">
+      <a href="/">back</a>
+      <div class="map">
+        <div class="s-1">
+          <p>01</p>
+          <p>Introduction</p>
+        </div>
+        <div class="s-2">
+          <p>02</p>
+          <p>Objectives</p>
+        </div>
+        <div class="s-3">
+          <p>03</p>
+          <p>Project Approach</p>
+        </div>
+        <div class="s-4">
+          <p>04</p>
+          <p>Functionality and Animations</p>
+        </div>
+        <div class="s-5">
+          <p>05</p>
+          <p>Style and Aesthetics</p>
+        </div>
+        <div class="s-6">
+          <p>06</p>
+          <p>Content</p>
+        </div>
+        <div class="s-7">
+          <p>07</p>
+          <p>Professional Growth</p>
+        </div>
+        <div class="s-8">
+          <p>08</p>
+          <p>Goals</p>
+        </div>
+      </div>
+      <div class="sections">
+        <div class="section-1 sec">
+          <div class="header">
+            <p>01</p>
+            <p>Introduction</p>
+          </div>
+          <div class="copy">
+            <h1>
+              My focus has always been on enhancing my skills, and this website
+              serves as a platform to refine my expertise in web design and the
+              utilization of GSAP to elevate the visual appeal of my creations.
+            </h1>
+          </div>
+        </div>
+        <div class="section-2 sec">
+          <div class="header">
+            <p>02</p>
+            <p>Objectives</p>
+          </div>
+          <div class="copy">
+            <h1>
+              My goals remain consistent: to master GSAP, apply various design
+              patterns, and enhance my logical thinking in web development, all
+              while continuously practicing.
+            </h1>
+          </div>
+        </div>
+        <div class="section-3 sec">
+          <div class="header">
+            <p>03</p>
+            <p>Project Approach</p>
+          </div>
+          <div class="copy">
+            <h1>
+              I've concentrated on redesigning pages with visually captivating
+              styles while acquiring proficiency in GSAP through online
+              tutorials and courses.
+            </h1>
+          </div>
+        </div>
+        <div class="section-4 sec">
+          <div class="header">
+            <p>04</p>
+            <p>Functionality and Animations</p>
+          </div>
+          <div class="copy">
+            <h1>
+              I've integrated popular animations such as loading animations,
+              hover effects, and smooth scrolling to enhance user experience on
+              the website.
+            </h1>
+          </div>
+        </div>
+        <div class="section-5 sec">
+          <div class="header">
+            <p>05</p>
+            <p>Style and Aesthetics</p>
+          </div>
+          <div class="copy">
+            <h1>
+              I've endeavored to replicate the style and aesthetics of websites
+              that have resonated with me, infusing my personal touch to make
+              them more appealing.
+            </h1>
+          </div>
+        </div>
+        <div class="section-6 sec">
+          <div class="header">
+            <p>06</p>
+            <p>Content</p>
+          </div>
+          <div class="copy">
+            <h1>
+              Content on the website reflects my interests, including film,
+              music, and literature, with animations applied to augment its
+              presentation.
+            </h1>
+          </div>
+        </div>
+        <div class="section-7 sec">
+          <div class="header">
+            <p>07</p>
+            <p>Professional Growth</p>
+          </div>
+          <div class="copy">
+            <h1>
+              This project has been a rewarding experience, enhancing my
+              understanding of web animations and proficiency with GSAP, thereby
+              contributing to both my personal growth and professional
+              advancement in web development.
+            </h1>
+          </div>
+        </div>
+        <div class="section-8 sec">
+          <div class="header">
+            <p>08</p>
+            <p>Goals</p>
+          </div>
+          <div class="copy">
+            <h1>
+              My primary objective with this project is to showcase my GSAP and
+              animation skills, with the ultimate aim of securing employment
+              opportunities in the field of web development.
+            </h1>
+          </div>
+        </div>
+        <BackTop />
+        <div class="whitespace"></div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/satoshi");
+
+  :root {
+    --color-bg: #c0c0c0;
+    --color-section-1: #fff;
+    --color-section-2: #ff3d01;
+    --color-section-3: #5922cc;
+    --color-section-4: #000;
+    --color-section-5: #2935f8;
+    --color-section-6: #ff113d;
+    --color-section-7: #fffc03;
+    --color-section-8: #0afc04;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    background: var(--color-bg);
+    font-family: "Satoshi", sans-serif;
+    overflow-x: hidden;
+  }
+  a {
+    text-decoration: none;
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    padding: 3px 15px;
+    color: #000;
+    text-transform: capitalize;
+    border-radius: 20px;
+  }
+
+  a:hover {
+    background: #fff;
+    border: 1px solid;
+    transition: 0.4s ease;
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .map {
+    position: fixed;
+    width: 20%;
+    margin: 50px 0;
+    padding: 0 20px;
+  }
+
+  .sections {
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    left: 20%;
+    padding: 30px 20px 0 0;
+  }
+
+  .map > div {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1.5px solid #000;
+    border-radius: 20px;
+    transition: height 0.5s;
+  }
+
+  .sections > div {
+    width: 100%;
+    margin: 20px 0 80px 0;
+  }
+
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px 25px;
+    border: 1.5px solid #000;
+    border-radius: 40px;
+    font-size: 14px;
+  }
+
+  .map > div p:nth-child(1) {
+    font-size: 13px;
+  }
+
+  .map > div p:nth-child(2) {
+    font-size: 20px;
+  }
+
+  .copy {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border: 1.5px solid #000;
+    border-radius: 20px;
+  }
+
+  .copy h1 {
+    font-weight: 300;
+    font-size: 60px;
+  }
+
+  .section-1 {
+    height: 750px;
+  }
+
+  .section-2 {
+    height: 700px;
+  }
+
+  .section-3 {
+    height: 600px;
+  }
+
+  .section-4 {
+    height: 700px;
+  }
+
+  .section-5 {
+    height: 800px;
+  }
+
+  .section-6 {
+    height: 700px;
+  }
+
+  .section-7 {
+    height: 800px;
+  }
+
+  .section-8 {
+    height: 700px;
+  }
+  .whitespace {
+    width: 100%;
+    height: 100px;
+    border: none !important;
+  }
+
+  .s-1,
+  .section-1 .header,
+  .section-1 .copy {
+    background: var(--color-section-1);
+  }
+
+  .s-2,
+  .section-2 .header,
+  .section-2 .copy {
+    background: var(--color-section-2);
+    color: #fff;
+  }
+
+  .s-3,
+  .section-3 .header,
+  .section-3 .copy {
+    background: var(--color-section-3);
+    color: #fff;
+  }
+
+  .s-4,
+  .section-4 .header,
+  .section-4 .copy {
+    background: var(--color-section-4);
+    color: #fff;
+  }
+
+  .s-5,
+  .section-5 .header,
+  .section-5 .copy {
+    background: var(--color-section-5);
+    color: #fff;
+  }
+
+  .s-6,
+  .section-6 .header,
+  .section-6 .copy {
+    background: var(--color-section-6);
+    color: #fff;
+  }
+
+  .s-7,
+  .section-7 .header,
+  .section-7 .copy {
+    background: var(--color-section-7);
+  }
+
+  .s-8,
+  .section-8 .header,
+  .section-8 .copy {
+    background: var(--color-section-8);
+  }
+</style>
+
+<script>
+  const mapDivs = document.querySelectorAll(".map > div") as any;
+  const sectionDivs = document.querySelectorAll(".sections > .sec") as any;
+  const sectionHeights = [];
+  const acumulatedHeights = [];
+  const RATIO = 0.5;
+
+  let acumulatedHeight = 0;
+  sectionDivs.forEach((section) => {
+    const height = section.clientHeight;
+    sectionHeights.push(height * RATIO);
+    acumulatedHeight += height;
+    acumulatedHeights.push(acumulatedHeight);
+  });
+
+  let lastActiveIndex = -1;
+
+  function updateMapHeights(scrollPos) {
+    for (let i = 0; i < acumulatedHeights.length; i++) {
+      if (i === 0 && scrollPos < acumulatedHeights[i]) {
+        if (lastActiveIndex !== i) {
+          if (lastActiveIndex >= 0) {
+            mapDivs[lastActiveIndex].style.height = "100px";
+          }
+          mapDivs[i].style.height = `${sectionHeights[i]}px`;
+          lastActiveIndex = i;
+        }
+        break;
+      } else if (
+        i > 0 &&
+        scrollPos >= acumulatedHeights[i - 1] &&
+        scrollPos < acumulatedHeights[i]
+      ) {
+        if (lastActiveIndex !== i) {
+          if (lastActiveIndex >= 0) {
+            mapDivs[lastActiveIndex].style.height = "100px";
+          }
+          mapDivs[i].style.height = `${sectionHeights[i]}px`;
+          lastActiveIndex = i;
+        }
+
+        break;
+      }
+    }
+  }
+
+  const sectionsTotalHeight = [...sectionDivs].reduce(
+    (sum, section) => sum + section.clientHeight,
+    0
+  );
+
+  const mapTotalHeight =
+    [...mapDivs].reduce((sum, mapDiv) => sum + mapDiv.clientHeight, 0) +
+    (mapDivs.length - 1) * 75;
+
+  const sectionsScrollableHeight = sectionsTotalHeight - window.innerHeight;
+  const mapScrollableHeight = mapTotalHeight - window.innerHeight;
+
+  const scrollRatio = mapScrollableHeight / sectionsScrollableHeight;
+
+  window.addEventListener("scroll", () => {
+    const scrollPos = window.scrollY;
+
+    const mapTranslateY = scrollPos * scrollRatio;
+    document.querySelector(".map" as any).style.transform =
+      `translateY(-${mapTranslateY}px)`;
+
+    updateMapHeights(scrollPos);
+  });
+</script>

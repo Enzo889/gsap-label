@@ -1,0 +1,263 @@
+<main>
+  <div class="wrapp">
+    <a href="/">back</a>
+    <div class="header">
+      <div class="header_b1">
+        <div class="grad"></div>
+        <h1 class="title">
+          <div class="title_row">
+            <div class="title_hover">
+              <div class="title_txt">Directed</div>
+              <div class="title_img">
+                <img
+                  src="https://i.pinimg.com/236x/cf/45/18/cf4518d23112e5e84c0e2e988359b6a7.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="title_hover">
+              <div class="title_txt">by</div>
+              <div class="title_img">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzuG2wLsGzjvLUOqVIF8NJmu1c-GfkmMiuHfrmD_dv8cOpR9tb5nHT9kydZuDx5YKNo-c&usqp=CAU"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="title_row">
+            <div class="title_hover">
+              <div class="title_txt">John</div>
+              <div class="title_img">
+                <img
+                  src="https://i.pinimg.com/236x/f0/2b/5e/f02b5e46d8e678ddc80414b71992514f.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="title_hover">
+              <div class="title_txt">Carpenter</div>
+              <div class="title_img">
+                <img
+                  src="https://i.pinimg.com/236x/c0/bd/80/c0bd80119d76912e4cc3cfc189bfaa65.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </h1>
+      </div>
+    </div>
+  </div>
+</main>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/albertus-medium");
+
+  :root {
+    /* --pr-color: #f1f0ee; */
+    --pr-color: #35ff02;
+    --second-color: #0a0a0a;
+  }
+
+  *::selection {
+    background-color: #35ff02;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: var(--second-color);
+  }
+
+  .wrapp {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    overflow: hidden;
+  }
+  a {
+    position: absolute;
+    left: 8px;
+    top: 15px;
+    color: var(--pr-color);
+    z-index: 5;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Albertus Medium", sans-serif;
+    font-weight: 800;
+    font-size: 25px;
+    opacity: 0.6;
+  }
+
+  a:hover {
+    opacity: 0.2;
+    transition: 0.4s ease;
+  }
+  /* text-hover-effect */
+
+  .header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 35px 35px 120px 35px;
+    overflow: hidden;
+  }
+
+  .header_b1 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: #141414;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 2;
+    margin-top: 35px;
+  }
+
+  .grad {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    top: 0;
+    left: 0;
+    background-image: url(https://images.unsplash.com/photo-1602127642472-af608992566e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8Mzh8ODY0NTY4NHx8ZW58MHx8fHx8);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+  }
+
+  .title {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    text-transform: uppercase;
+    color: var(--pr-color);
+    z-index: 2;
+    font-weight: 600;
+    font-family: "Albertus Medium", sans-serif;
+  }
+
+  .title_row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .title_row:first-child {
+    gap: 25px;
+    font-size: 55px;
+  }
+  .title_row:last-child {
+    gap: 25px;
+    font-size: 100px;
+  }
+
+  .title_hover {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .title_txt {
+    position: relative;
+    padding: 5px 0;
+    mix-blend-mode: difference;
+    z-index: 2;
+  }
+
+  .title_img {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform-origin: 30% 50%;
+    will-change: transform;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .title_img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+
+  const gsapItems = document.querySelectorAll(".title_hover");
+  const titleImg = document.querySelector(".title_img");
+
+  gsap.set(".title_img", {
+    scaleX: 0,
+    filter: "hue-rotate(360deg) contrast(1)",
+  });
+
+  gsapItems.forEach((gsIt) => {
+    const img = gsIt.querySelector(".title_img") as any;
+    let widthImg = img.offsetWidth / 2;
+    let heightImg = img.offsetHeight / 2;
+
+    gsIt.addEventListener("mouseenter", function (e: any) {
+      if (e.type === "mouseenter") {
+        let xpos = e.offsetX;
+        let ypos = e.offsetY;
+
+        const tl = gsap.timeline();
+
+        tl.set(img, {
+          x: xpos - widthImg,
+          y: ypos - heightImg,
+        }).to(img, {
+          opacity: 1,
+          scaleX: 1,
+          filter: "hue-rotate(360deg) contrast(1)",
+          duration: 0.7,
+          ease: "expo.out",
+        });
+      }
+    });
+
+    gsIt.addEventListener("mouseleave", function (e) {
+      if (e.type === "mouseleave") {
+        const tl = gsap.timeline();
+
+        tl.to(img, {
+          opacity: 0,
+          scaleX: 0,
+          filter: "hue-rotate(300deg) contrast(5)",
+          duration: 0.7,
+          ease: "expo.out",
+        });
+      }
+    });
+
+    gsIt.addEventListener("mousemove", function (e: any) {
+      let xpos = e.offsetX;
+      let ypos = e.offsetY;
+
+      const tl = gsap.timeline();
+
+      tl.to(img, {
+        x: xpos - widthImg,
+        y: ypos - heightImg,
+      });
+    });
+  });
+</script>

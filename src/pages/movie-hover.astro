@@ -1,0 +1,384 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Movie Hover">
+  <main>
+    <div class="container">
+      <div class="work">
+        <div class="overlay">
+          <div class="prev" id="prev-1">
+            <img src="src/assets/gifs/jw4.gif" alt="" />
+          </div>
+          <div class="prev" id="prev-2">
+            <img src="src/assets/gifs/nope.webp" alt="" />
+          </div>
+          <div class="prev" id="prev-3">
+            <img src="src/assets/gifs/burning.gif" alt="" />
+          </div>
+        </div>
+        <p>Your Gateway to Film Delights:</p>
+        <a href="https://www.imdb.com/title/tt10366206/" target="_blank">
+          <div class="work-item" id="w-1">
+            <div class="work-item-name">
+              <h1>John Wick: Chapter 4 (2023)</h1>
+            </div>
+            <div class="work-item-icon">
+              <div class="icon-holder i-1">
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+              <div class="icon-holder i-2">
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.imdb.com/title/tt10954984/" target="_blank">
+          <div class="work-item" id="w-2">
+            <div class="work-item-name">
+              <h1>Nope (2022)</h1>
+            </div>
+            <div class="work-item-icon">
+              <div class="icon-holder i-1">
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+              <div class="icon-holder i-2">
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.imdb.com/title/tt7282468/" target="_blank">
+          <div class="work-item" id="w-3">
+            <div class="work-item-name">
+              <h1>Burning (2018)</h1>
+            </div>
+            <div class="work-item-icon">
+              <div class="icon-holder i-1">
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+              <div class="icon-holder i-2">
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+        <div class="cta">
+          <button>Back</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script
+    src="https://kit.fontawesome.com/e2333fa6d2.js"
+    crossorigin="anonymous"></script>
+</Layout>
+
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    font-family: "Helvetica Now Var", Impact, Haettenschweiler,
+      "Arial Narrow Bold", sans-serif;
+    margin: 0;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  a {
+    text-decoration: none;
+  }
+
+  .work {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #141414;
+    padding: 5em 4em 5em 4em;
+    transition: background-color 0.5s ease;
+    overflow: hidden;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0%;
+    left: 15.25%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10em;
+    transition: 1s;
+    opacity: 0.5;
+  }
+
+  .prev {
+    position: relative;
+    width: 500px;
+    height: 600px;
+    background: gray;
+    transform: rotate(10deg);
+    transition: transform 0.5s ease;
+  }
+
+  .prev.active {
+    transform: rotate(12.5deg);
+  }
+
+  #prev-1 {
+    top: -500px;
+  }
+
+  #prev-2 {
+    top: 0;
+  }
+
+  #prev-3 {
+    top: 500px;
+  }
+
+  p {
+    position: relative;
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 1em;
+    transition: 0.5s;
+    z-index: 2;
+  }
+
+  h1 {
+    color: #fff;
+    opacity: 0.5;
+    font-size: 80px;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    transition: 0.5s;
+  }
+
+  .work-item {
+    position: relative;
+    width: 100%;
+    padding: 2em 0;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: 0.5s;
+    z-index: 2;
+  }
+
+  .work-item#w-3 {
+    border-bottom: none;
+  }
+
+  .work-item-icon {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    background: #0b1925;
+    color: #fff;
+    overflow: hidden;
+    left: -20px;
+    opacity: 0;
+    transition: 0.2s;
+  }
+
+  .icon-holder {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+  }
+
+  .i-1 {
+    transition-delay: 0.2s;
+    left: -70px;
+  }
+
+  .i-2 {
+    left: 0px;
+  }
+
+  button {
+    position: relative;
+    background: #fff;
+    color: #0b1925;
+    border: none;
+    transition: 0.5s;
+    padding: 2em 4em;
+    margin: 2em 0;
+    font-size: 15px;
+    border-radius: 100px;
+    font-weight: 500;
+    z-index: 2;
+    cursor: pointer;
+    width: 15%;
+  }
+
+  button:hover {
+    background-color: rgb(248, 63, 63);
+  }
+
+  .work.hovered button {
+    background: #0b1925;
+    color: #fff;
+  }
+
+  .work.hovered h1 {
+    color: #0b1925;
+    opacity: 1;
+  }
+
+  .work.hovered p {
+    color: #0b1925;
+  }
+
+  .work.hovered .work-item {
+    border-bottom: 1px solid #0b1925;
+  }
+
+  .work.hovered .work-item#w-3 {
+    border-bottom: none;
+  }
+
+  .work-item:hover .work-item-icon {
+    opacity: 1;
+    left: 0px;
+  }
+
+  .work-item:hover .icon-holder.i-1 {
+    left: 0;
+  }
+
+  .work-item:hover .icon-holder.i-2 {
+    left: 70px;
+  }
+
+  .bg-color-red {
+    background-color: rgb(92, 123, 226);
+  }
+
+  .bg-color-blue {
+    background-color: rgb(246, 250, 164);
+  }
+
+  .bg-color-green {
+    background-color: rgb(248, 63, 63);
+  }
+
+  @media (max-width: 900px) {
+    .work {
+      padding: 4em 1em;
+    }
+
+    .work-item {
+      gap: 1em;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    h1 {
+      font-size: 30px;
+    }
+
+    .work-item-icon {
+      transform: scale(0.75);
+    }
+
+    button {
+      padding: 1em 2em;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const workItems = document.querySelectorAll(".work-item");
+    const work = document.querySelector(".work");
+    const overlay = document.querySelector(".overlay") as any;
+    const prevElements = document.querySelectorAll(".prev");
+    const button = document.querySelector("button");
+
+    overlay.style.top = "0%";
+    overlay.style.left = "13.25%";
+    document.querySelector("#prev-2").classList.add("active");
+
+    function remoteActiveClass() {
+      prevElements.forEach(function (prev) {
+        prev.classList.remove("active");
+      });
+    }
+
+    workItems.forEach((item, index) => {
+      item.addEventListener("mouseover", function () {
+        remoteActiveClass();
+        const activePrev = document.querySelector("#prev-" + (index + 1));
+
+        if (activePrev) {
+          activePrev.classList.add("active");
+        }
+        work.classList.add("hovered");
+        switch (index) {
+          case 0:
+            overlay.style.top = "50%";
+            overlay.style.left = "50%";
+            work.className = "work bg-color-red hovered";
+            break;
+          case 1:
+            overlay.style.top = "0%";
+            overlay.style.left = "13.25%";
+            work.className = "work bg-color-blue hovered";
+            break;
+          case 2:
+            overlay.style.top = "-50%";
+            overlay.style.left = "-23.5%";
+            work.className = "work bg-color-green hovered";
+            break;
+        }
+      });
+
+      item.addEventListener("mouseout", function () {
+        work.classList.remove("hovered");
+        work.className = "work";
+        overlay.style.top = "0%";
+        overlay.style.left = "13.25%";
+
+        remoteActiveClass();
+        document.querySelector("#prev-2").classList.add("active");
+      });
+    });
+
+    button.addEventListener("click", function () {
+      window.location.href = "/";
+    });
+
+    button.addEventListener("mouseover", function () {
+      button.innerHTML = '<i class="fa-solid fa-arrow-left"></i>'; // Reemplaza el texto del botón con la flecha
+    });
+
+    button.addEventListener("mouseout", function () {
+      button.innerHTML = "Back"; // Restaura el texto original del botón
+    });
+  });
+</script>

@@ -1,0 +1,222 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Suspiria (1977)">
+  <main>
+    <div class="site-content">
+      <img src="src/assets/gifs/suspiria.webp" id="heroVideo" alt="" />
+    </div>
+
+    <div class="container">
+      <div class="nav">
+        <div class="logo">
+          <a href="/">Back</a>
+        </div>
+        <div class="links">
+          <a href="https://www.youtube.com/watch?v=x_FfT98QJks" target="_blank"
+            >Trailer</a
+          >
+          <a
+            href="https://www.amazon.com/-/es/Stefania-Casini/dp/B0771JVQ46"
+            target="_blank"
+          >
+            Buy</a
+          >
+          <a href="https://www.imdb.com/title/tt0076786/" target="_blank"
+            >IMDb</a
+          >
+          <a href="https://letterboxd.com/film/suspiria/" target="_blank"
+            >Letterboxd</a
+          >
+          <a
+            href="https://www.themoviedb.org/movie/11906-suspiria"
+            target="_blank">TMDB</a
+          >
+          <a href="https://www.justwatch.com/us/movie/suspiria" target="_blank"
+            >JustWatch</a
+          >
+        </div>
+      </div>
+
+      <div class="hero-copy">
+        <h1>Suspiria (1977)</h1>
+        <p>
+          Directed by Dario Argento. THE MOST FRIGHTENING FILM YOU’LL EVER SEE!
+        </p>
+      </div>
+
+      <div class="footer">
+        <div class="links">
+          <a href="https://www.youtube.com/watch?v=tfZCA0huiI0" target="_blank"
+            >The Beauty Of Suspiria</a
+          >
+          <a href="https://www.youtube.com/watch?v=gk2vfOIc9Js" target="_blank"
+            >Kill Count</a
+          >
+        </div>
+
+        <div class="cta">
+          <a
+            href="https://dainealmaclean.medium.com/why-every-colour-matters-in-dario-argentos-suspiria-1977-556a769d8b21"
+            target="_blank">Why every color matter?</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <canvas id="draw"></canvas>
+  </main>
+</Layout>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/pp-neue-montreal");
+  @import url("https://fonts.cdnfonts.com/css/horyzen");
+  @import url("https://fonts.cdnfonts.com/css/libertango");
+  @import url("https://fonts.cdnfonts.com/css/bruno-ace-sc-2");
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  ::selection {
+    color: #fff;
+    background: transparent;
+  }
+
+  html,
+  body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: red;
+  }
+
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+  }
+
+  .site-content {
+    position: absolute;
+  }
+
+  .nav,
+  .footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
+  }
+
+  .footer {
+    margin-top: 115px;
+  }
+
+  .links {
+    display: flex;
+    gap: 2em;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "PP Neue Montreal", sans-serif;
+    pointer-events: auto;
+  }
+
+  a:hover {
+    opacity: 0.5;
+    transition: 0.3s;
+  }
+
+  .logo a {
+    font-family: "Bruno Ace SC", "Libertango", "Horyzen Mono", sans-serif;
+    text-transform: uppercase;
+  }
+
+  .hero-copy {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+    transform: translateY(-50%);
+    text-align: center;
+  }
+
+  .hero-copy h1 {
+    font-size: 8vw;
+    color: #fff;
+    font-family: "Bruno Ace SC", "Libertango", "Horyzen Mono", sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .hero-copy p {
+    font-size: 2vw;
+    color: #fff;
+    font-family: "PP Neue Montreal", sans-serif;
+    margin: 0.5em 0;
+  }
+
+  #heroVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+</style>
+
+<script>
+  const canvas = document.querySelector("canvas");
+  const ctx = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  ctx.fillStyle = "black";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.lineJoin = "round";
+  ctx.lineCap = "round";
+  ctx.lineWidth = 200;
+
+  ctx.globalCompositeOperation = "destination-out";
+
+  let isDrawing = false;
+  let lastX = 0;
+  let lastY = 0;
+
+  function draw(e: MouseEvent) {
+    if (!isDrawing) return;
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(e.offsetX, e.offsetY);
+    ctx.stroke();
+    [lastX, lastY] = [e.offsetX, e.offsetY];
+  }
+
+  canvas.addEventListener("mousedown", (e: MouseEvent) => {
+    isDrawing = true;
+    [lastX, lastY] = [e.offsetX, e.offsetY];
+  });
+
+  canvas.addEventListener("mousemove", draw);
+  canvas.addEventListener("mouseup", () => (isDrawing = false));
+  canvas.addEventListener("mouseout", () => (isDrawing = false));
+</script>
