@@ -1,4 +1,4 @@
-# Gsap-Laber 
+# Gsap-Label
 
 project to practive gsap with astro 
 
