@@ -8,7 +8,7 @@ project to practive gsap with astro
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
-| `git clone github.com/Enzo889/gsap-label`  | clone repo                            |
+| `git clone github.com/Enzo889/gsap-label.git`  | clone repo                            |
 | `npm install`             | Installs dependencies                            |
 | `npm run dev`             | Starts local dev server at `localhost:4321`      |
 
